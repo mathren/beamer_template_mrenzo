@@ -1,23 +1,16 @@
-%%% Author: Mathieu Renzo <mathren90@gmail.com>
-%%% Keywords: files
-
-%%% Copyright (C) 2019 Mathieu Renzo
-
-%%% This program is free software: you can redistribute it and/or modify
-%%% it under the terms of the GNU General Public License as published by
-%%% the Free Software Foundation, either version 2 of the License.
-%%%
-%%% This program is distributed in the hope that it will be useful, but
-%%% WITHOUT ANY WARRANTY; without even the implied warranty of
-%%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-%%% General Public License for more details.
-%%%
-%%% You should have received a copy of the GNU General Public License
-%%% along with this program.  If not, see http://www.gnu.org/licenses/.
-
-
 \ProvidesPackage{beamerthemeumbc4}[2005/03/05 v1.2 for beamer 3.01]
 % Theme for talk with stuff from API
+% Usage:
+%
+% \documentclass{beamer}
+% [commands affecting slide's background color, if any, go here]
+% \usetheme{umbc4}
+% ...
+% Based on the theme by:
+% Rouben Rostamian <rostamian@umbc.edu>
+% Developed by:
+% Mathieu Renzo <mathren90@gmail.com>
+
 \mode<presentation>
 
 \usepackage{pgfcomp-version-0-65}
@@ -130,7 +123,7 @@
   \setbeamertemplate{subsection in toc}{%
 %    \leavevmode\leftskip=5.65ex%
 %    \llap{\raisebox{0.2ex}
-    {\centering{\textcolor{Blue}{$\bullet$}}\kern1ex}%
+    {\centering\kern1ex}%
     {\textcolor{black}{\inserttocsubsection}}\par%
   }
   
