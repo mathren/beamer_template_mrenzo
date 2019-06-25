@@ -1,0 +1,13 @@
+*~
+*.synctex.gz
+auto/
+*.bbl
+*.aux
+*.toc
+*.log
+*.nav
+*.snm
+*.
+*.tar.gz
+template.pdf
+*.out
