@@ -1,0 +1,160 @@
+\ProvidesPackage{beamerthemeumbc4}[2005/03/05 v1.2 for beamer 3.01]
+% Theme for talk with stuff from API
+% Usage:
+%
+% \documentclass{beamer}
+% [commands affecting slide's background color, if any, go here]
+% \usetheme{umbc4}
+% ...
+% Based on the theme by:
+% Rouben Rostamian <rostamian@umbc.edu>
+% Developed by:
+% Mathieu Renzo <mathren90@gmail.com>
+
+\mode<presentation>
+
+\usepackage{pgfcomp-version-0-65}
+%\usepackage{xcolor}
+\setbeamersize{text margin left=0em,text margin right=0em} %No margins
+
+% ------ definition of logos ------------------------
+
+{
+  \usebeamercolor[bg]{background canvas} % blend logo with canvas bg color
+
+  \pgfdeclarehorizontalshading{umbc@redbox}{60mm}%
+  {color(0mm)=(bg); rgb(5mm)=(1,0.6,0.6); rgb(10mm)=(1,0,0)}
+
+  \pgfdeclarehorizontalshading{umbc@bluebox}{6mm}%
+  {rgb(0mm)=(0,0,1); color(8mm)=(bg)}
+
+  \pgfdeclarehorizontalshading{umbc@goldbox}{6mm}%
+  {rgb(0mm)=(1,0.93,0); color(8mm)=(bg)}
+
+  \pgfdeclarehorizontalshading{umbc@fadingline}{.28mm}%
+  {color(0mm)=(black); color(50mm)=(black!50!bg); color(110mm)=(bg)}
+
+  \pgfdeclarehorizontalshading{Myfadingline}{.28mm}%
+  {color(0mm)=(bg); color(50mm)=(black); color(110mm)=(bg)}
+}
+
+\newcommand{\umbc@pplogo}{%
+  \raisebox{-12mm}[0pt][0pt]{%
+    \begin{pgfpicture}{0mm}{0mm}{0mm}{0mm}
+      
+      % horizontal non-fading line
+      \pgfsetlinewidth{.85}
+      \color{black}
+      \pgfline{\pgfpoint{0}{13.3}}{\pgfpoint{346}{13.3}} 
+
+      % University of Amsterdam
+      \begin{pgftranslate}{\pgfpoint{10.8}{23.9}}
+        \pgfbox[center,center]
+        {\includegraphics[width=.059\textwidth]{./fig_slides/Uva}}
+      \end{pgftranslate}
+ 
+      % API logo
+      \begin{pgftranslate}{\pgfpoint{329}{14.5}}
+        \pgfbox[center,center]
+        {         \includegraphics[width=.179\textwidth]{./fig_slides/api_logo_default_black.pdf}
+        }
+      \end{pgftranslate}
+      
+      %second part of horizontal non-fading line
+      \pgfsetlinewidth{.85}
+      \color{black}
+      \pgfline{\pgfpoint{360}{13.3}}{\pgfpoint{380}{13.3}} 
+
+      
+       % Caltech logo
+       % \begin{pgftranslate}{\pgfpoint{351.4}{21.4}}
+       %   \pgfbox[center,center]
+       %   {\includegraphics[width=.07\textwidth]{./fig_slides/caltech_logo.pdf}}
+%       \end{pgftranslate}       
+       \end{pgfpicture}
+     }
+  }
+  
+  % ------ end of logos -----------------
+  
+  % frame head
+  \setbeamertemplate{headline}[text line]{\umbc@pplogo}
+  
+  \setbeamerfont{frametitle}{size=\LARGE} % beamer's default is \Large
+  \definecolor{bblue}{HTML}{144b7a}%unipi logo color
+  \definecolor{lightred}{HTML}{FF3333}
+  \colorlet{whiteish}{white!80!Yellow}
+
+  % Frame title options
+  \newdimen\umbc@ypos
+  \newbox\umbc@mybox
+  \setbeamertemplate{frametitle}{%
+    \setbox\umbc@mybox\hbox{\normalsize x}
+    \umbc@ypos=\ht\umbc@mybox
+    \multiply \umbc@ypos by 2
+    \advance \umbc@ypos by -20pt%-8mm
+    \raisebox{\umbc@ypos}[0][300]{
+      \textcolor{structure}{ \centering \insertframetitle}
+    }
+  }
+  % block style
+% \makeatletter
+% \pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+%   color(0pt)=(upper.bg); color(3pt)=(upper.bg); color(3pt)=(upper.bg)}
+% % \makeatother
+% \colorlet{separation rule}{structure!40}
+
+\makeatletter
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(upper.bg); color(2pt)=(upper.bg); color(4pt)=(upper.bg)}
+\makeatother
+    
+
+  
+  \setbeamertemplate{blocks}[rounded][shadow=false]
+  \setbeamercolor{block title}{use=structure,fg=Blue,bg=white}
+  \setbeamercolor{block body}{use=structure,fg=black,bg=white}
+
+
+
+  
+  
+% to add TOC
+  \setbeamertemplate{subsection in toc}{%
+%    \leavevmode\leftskip=5.65ex%
+%    \llap{\raisebox{0.2ex}
+    {\centering{\textcolor{Blue}{$\bullet$}}\kern1ex}%
+    {\textcolor{black}{\inserttocsubsection}}\par%
+  }
+  
+  
+  % \setbeamercolor{section in toc shaded}{fg=pink!40!black}
+  \setbeamerfont{section in toc}{size=\Large\bf}
+  \setbeamerfont{subsection in toc}{size=\normalsize}
+  % \setbeamercolor{subsection in toc}{fg=LHCblue!40!black}
+  
+  
+% \AtBeginSection[]
+% {
+%   \begin{frame}{Outline}
+%     \begin{center}
+%       \tableofcontents[currentsection,currentsubsection]
+%     \end{center}
+%   \end{frame}
+% }
+
+
+\setbeamercolor{button}{bg=,fg=structure}
+\usecolortheme[named=Blue]{structure} 
+\setbeamertemplate{items}[circle] 	             %Objects
+\setbeamertemplate{blocks}[rounded][shadow=false]  %Non-shadowed blocks
+\setbeamertemplate{navigation symbols}{}             %No navigation symbols
+\setbeamertemplate{footline}[frame number]           %Slide numbers
+\setbeamertemplate{frametitle}[default][center]      %Center titles
+
+% center title vertically
+\addtobeamertemplate{frametitle}{\vskip-0.9ex}{}
+
+\mode<all>
+
+
