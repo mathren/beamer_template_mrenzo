@@ -5,7 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{cancel}
 \usepackage[normalem]{ulem}
-% \usepackage{xcolor} %% loaded in beamerthemumbc4.sty
+\usepackage{xcolor}
 \usepackage{cases}
 \usepackage{comment}
 \usepackage{mathpazo}
@@ -26,7 +26,7 @@
 \usetikzlibrary{positioning}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \usepackage{appendixnumberbeamer}
-
+\usepackage{fancybox}
 \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
 % for textpos
 
@@ -352,5 +352,27 @@
 \definecolor{reddish}{HTML}{FF8484}
 \definecolor{yellowish}{HTML}{FFF684}
 \definecolor{pinkish}{HTML}{FF94FF}
-%% \usetheme{umbc4}   %%% Theme Name
+\colorlet{whiteish}{white!80!Yellow}
+\colorlet{lightgray}{gray!50}
 
+%% set theme
+\usetheme{metropolis}   %%% Theme Name
+% customizations
+\metroset{progressbar=frametitle}
+\metroset{subsectionpage=progressbar}
+\setbeamertemplate{blocks}[rounded]
+% colors
+\usecolortheme{seahorse}
+\setbeamercolor{structure}{fg=Blue, bg=white}
+\setbeamercolor{progress bar}{fg=Blue, bg=gray!30}
+\setbeamercolor{progress bar in section page}{fg=Blue, bg=gray!30}
+\setbeamercolor{frametitle}{bg=, fg=Blue} %% set colors
+\setbeamercolor{block body}{bg=white,fg=black} %% white background 
+\setbeamercolor{block title}{bg=white,fg=Blue} %% white background by
+\setbeamercolor{background canvas}{bg=,fg=black} %% white background
+% remove margins
+\setbeamersize{text margin left=2pt,text margin right=2pt}
+\setbeamertemplate{section in toc}{
+  \centering \bf \color{Blue}\inserttocsection \par}
+\setbeamertemplate{subsection in toc}{
+  \centering \inserttocsubsection \par}

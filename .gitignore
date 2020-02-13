@@ -11,3 +11,4 @@ auto/
 *.tar.gz
 template.pdf
 *.out
+fig_slides/*
