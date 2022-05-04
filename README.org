@@ -1,6 +1,37 @@
-* beamer_template_mrenzo
+* My Beamer template
 
-Self-made beamer theme for slides.
+Beamer theme obtained as a customization of the [[https://github.com/matze/mtheme][metropolis theme]].
 
-I use okular as pdf user and I am able to play mp4 and gif animations in my
-slides.
+
+** Tips
+
+*** Figures
+
+    I explicitly set a relative =graphicspath= in the =_template.tex= main tex
+    file for where I save the images. I heavily use =textblock= for
+    positioning of figures, blocks, etc.
+
+*** Notes on secondary screen
+
+    You can add notes for yourself using =\note= and setting
+    =\setbeameroptions{show notes on second screen=right}=. This will
+    require a pdf reader that can split each page of the pdf. I use
+    pdfpc for this, which also allows embedding videos.
+
+
+*** Multimedia
+
+    I am able to play mp4 and gif animations in my slides using the
+    multimedia package:
+
+    #+begin_src tex
+    \movie[width=0.9\textwidth,height=0.95\textheight,showcontrols=true,autostart=true]{}{./path/to/movie.mp4}
+     #+end_src.
+
+    I use okular or pdfpc as pdf readers and this works fine
+
+
+** Example talks
+
+   Most of my slides available [[https://users.flatironinstitute.org/~mrenzo/talks.html][here]] where made with (an earlier
+   version of) this setup.
