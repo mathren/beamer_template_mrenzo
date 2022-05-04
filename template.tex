@@ -1,10 +1,11 @@
 %%% Author: Mathieu Renzo
-
 \documentclass[xcolor=dvipsnames,professionalfonts, aspectratio=169]{beamer}
 \input{./setup.tex}
-%\setbeameroption{show notes}
-\setbeameroption{show notes on second screen=right}
-%%%% \setbeameroption{show notes on second screen=right}
+
+% uncomment these for adding comments for secondary screen with
+% \note
+% \setbeameroption{show notes}
+% \setbeameroption{show notes on second screen=right}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%\setbeamertemplate{background}[grid][step=10]        %%%%Grid on slides to help positioning
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -28,23 +29,38 @@
 
 \end{frame}
 
-\subsection{Subsection}
+\subsection{Subsection: type of frames}
 \begin{frame}[plain]
-
+  \begin{center}
+    Empty (no title)
+  \end{center}
 \end{frame}
 
-\begin{frame}[standout]
+
+\begin{frame}[standout]{standout frame}
+  % this one has a background contrasting
+\end{frame}
+
+\subsection{Another subsection}
+\begin{frame}{Movie embedded in pdf}
+
+  % uses the multimedia package, works with okular and pympress
+%   \movie[width=0.9\textwidth,
+%   height=0.95\textheight,showcontrols=true,autostart=true]{}{./path/to/movie.mp4}
 
 \end{frame}
 
 \section{Another section}
+\subsection{with its own subsection}
+\begin{frame}
+
+\end{frame}
+
 \begin{frame}
 
 \end{frame}
 
 \appendix
-
-%\section*{Backup Slides}
 
 \begin{frame}[standout]
   \begin{center}
