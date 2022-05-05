@@ -7,17 +7,17 @@ Beamer theme obtained as a customization of the [[https://github.com/matze/mthem
 
 *** Figures
 
-    I explicitly set a relative =graphicspath= in the =_template.tex= main tex
-    file for where I save the images. I heavily use =textblock= for
-    positioning of figures, blocks, etc.
+    I explicitly set a relative =graphicspath= in the =template.tex= main
+    tex file for where I save the images (=./fig_slides/= by default). I
+    heavily use =textblock= for positioning of figures, blocks, etc. See
+    example usages compiling =template.tex=.
 
 *** Notes on secondary screen
 
     You can add notes for yourself using =\note= and setting
     =\setbeameroptions{show notes on second screen=right}=. This will
     require a pdf reader that can split each page of the pdf. I use
-    pdfpc for this, which also allows embedding videos.
-
+    [[https://github.com/pdfpc/pdfpc][pdfpc]] for this, which also allows embedding videos.
 
 *** Multimedia
 
@@ -28,8 +28,10 @@ Beamer theme obtained as a customization of the [[https://github.com/matze/mthem
     \movie[width=0.9\textwidth,height=0.95\textheight,showcontrols=true,autostart=true]{}{./path/to/movie.mp4}
      #+end_src.
 
-    I use okular or pdfpc as pdf readers and this works fine
+    This works at least with  okular and pdfpc as pdf readers.
 
+    Note that =\movie= will not use the =graphicspath= set in the document
+    pre-amble.
 
 ** Example talks
 
