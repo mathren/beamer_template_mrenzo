@@ -30,8 +30,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{appendixnumberbeamer}
 \usepackage{fancybox}
-\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
-% for textpos
+\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}% for textpos
+\usepackage{mathabx} % for astronomical symbols of planets
 
 % checkmark and crossmark
 % requires pifont
@@ -50,7 +50,7 @@
 
 \newcommand\Connectw[3][]{%
   \tikz[remember picture,overlay]
-  \draw[-to,line width=5pt,>=latex,white!80!Yellow,#1] (#2.east) -- ( $ (#3.east) + (-2pt,0) $ );%
+  \draw[-to,line width=3pt,>=latex,white!80!Yellow,#1] (#2.east) -- ( $ (#3.west) + (-2pt,0) $ );%
 }
 
 \newcommand\Connectr[3][]{%
@@ -332,7 +332,7 @@
 
 \newcommand{\udef}{\stackrel{\mathrm{def}}{=}}
 
-\newcommand{\todo}[1]{{\Huge $\blacksquare$~\textbf{\color{red}[TODO:#1]}~$\blacksquare$}\\ }
+\newcommand{\todo}[1]{{\Huge $\blacksquare$~\textbf{\color{red}#1}~$\blacksquare$}\\ }
 
 \newenvironment<>{varblock}[2][.9\textwidth]{%
   \setlength{\textwidth}{#1}
@@ -362,56 +362,29 @@
 \colorlet{whiteish}{white!80!Yellow}
 \colorlet{lightgray}{gray!50}
 
+%% set theme
 \usetheme{metropolis}   %%% Theme Name
 % customizations
 \metroset{progressbar=frametitle}
 \metroset{subsectionpage=progressbar}
 \setbeamertemplate{blocks}[rounded]
+% colors
 \usecolortheme{seahorse}
 \setbeamercolor{structure}{fg=Blue, bg=white}
 \setbeamercolor{progress bar}{fg=Blue, bg=gray!30}
 \setbeamercolor{progress bar in section page}{fg=Blue, bg=gray!30}
 \setbeamercolor{frametitle}{bg=, fg=Blue} %% set colors
-% \setbeamercolor{block body}{bg=white,fg=black} %% white background
-% \setbeamercolor{block title}{bg=white,fg=Blue} %% white background
+
+%block
 \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
 \setbeamercolor{block title}{use=Blue,fg=Blue,bg=white!80!Yellow}
+
+% \setbeamercolor{block body}{bg=white,fg=black} %% white background
+% \setbeamercolor{block title}{bg=white,fg=Blue} %% white background
 \setbeamercolor{background canvas}{bg=,fg=black} %% white background
 % remove margins
 \setbeamersize{text margin left=2pt,text margin right=2pt}
-\setbeamercolor{subsection title}{bg=, fg=Blue}
-\setbeamercolor{section title}{bg=, fg=Blue}
-
-
-% subsections
-\setbeamertemplate{subsection page}{
-  \centering
-  \begin{minipage}{22em}
-    \raggedright
-    \usebeamercolor[fg]{section title}
-    \usebeamerfont{section title}
-    \insertsectionhead\\[-1ex]
-    \usebeamertemplate*{progress bar in section page}
-    \par\vskip10pt
-    \usebeamercolor[fg]{subsection title}%
-    \usebeamerfont{subsection title}%
-    \tableofcontents[
-        currentsubsection,
-        sectionstyle=hide/hide,
-        hideothersubsections,
-        subsectionstyle=show/shaded/hide
-        ]
-  \end{minipage}
-  \par
-  \vspace{\baselineskip}
-}
-
-% no section page by default
-\AtBeginSection[]{}
-% but subsection page with current subsection highlighted
-\AtBeginSubsection{
-    \frame[plain,noframenumbering]{\subsectionpage}
-  }
-
-% grayed out \only? -- not working yet
-\setbeamercovered{transparent}
+\setbeamertemplate{section in toc}{
+  \centering \bf \color{Blue}\inserttocsection \par}
+\setbeamertemplate{subsection in toc}{
+  \centering \inserttocsubsection \par}
