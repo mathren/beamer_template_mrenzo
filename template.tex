@@ -11,6 +11,30 @@
 %%%% Global Background must be put in preamble
 %%%% \setbeamercolor{background canvas}{bg=BGcol}
 
+%% subsection pages highlight only the current subsection
+\makeatletter
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{minipage}{22em}
+    \raggedright
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    \insertsectionhead\\[-1ex]
+    \usebeamertemplate*{progress bar in section page}
+    \par\vskip10pt
+    \usebeamercolor[fg]{subsection title}%
+    \usebeamerfont{subsection title}%
+    \tableofcontents[currentsubsection,
+    sectionstyle=hide/hide,
+    hideothersubsections,subsectionstyle=show/shaded/hide]
+  \end{minipage}
+  \par
+  \vspace{\baselineskip}
+}
+\makeatother
+
+
+
 \begin{document}
 
 \graphicspath{{./fig_slides/}}
