@@ -11,7 +11,15 @@
 %%%% Global Background must be put in preamble
 %%%% \setbeamercolor{background canvas}{bg=BGcol}
 
+
+
+\begin{document}
+
+
 %% subsection pages highlight only the current subsection
+%% removes TOC page for sections, add an empty subsection to
+%% see it
+{
 \makeatletter
 \setbeamertemplate{subsection page}{
   \centering
@@ -32,10 +40,8 @@
   \vspace{\baselineskip}
 }
 \makeatother
+\AtBeginSection[]{}
 
-
-
-\begin{document}
 
 \graphicspath{{./fig_slides/}}
 
