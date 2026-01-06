@@ -397,7 +397,31 @@
   \endgroup
 }
 
-
+%% subsection pages highlight only the current subsection
+%% removes TOC page for sections, add an empty subsection to
+%% see it
+{
+\makeatletter
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{minipage}{22em}
+    \raggedright
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    \insertsectionhead\\[-1ex]
+    \usebeamertemplate*{progress bar in section page}
+    \par\vskip10pt
+    \usebeamercolor[fg]{subsection title}%
+    \usebeamerfont{subsection title}%
+    \tableofcontents[currentsubsection,
+    sectionstyle=hide/hide,
+    hideothersubsections,subsectionstyle=show/shaded/hide]
+  \end{minipage}
+  \par
+  \vspace{\baselineskip}
+}
+\makeatother
+\AtBeginSection[]{}
 
 
 %%% Local Variables:
