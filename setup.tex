@@ -398,7 +398,8 @@
   \endgroup
 }
 
-
+\let\oldsection\section
+\renewcommand{\section}[1]{\oldsection{\textcolor{Blue}{#1}}}
 
 \makeatletter
 \setbeamertemplate{subsection page}{
