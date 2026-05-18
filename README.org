@@ -2,7 +2,6 @@
 
 Beamer theme obtained as a customization of the [[https://github.com/matze/mtheme][metropolis theme]].
 
-
 ** Tips
 
 *** Figures
@@ -22,7 +21,7 @@ Beamer theme obtained as a customization of the [[https://github.com/matze/mthem
 *** Multimedia
 
     I am able to play mp4 and gif animations in my slides using the
-    multimedia package:
+    =multimedia= package:
 
     #+begin_src tex
     \movie[width=0.9\textwidth,height=0.95\textheight,showcontrols=true,autostart=true]{}{./path/to/movie.mp4}
@@ -35,5 +34,4 @@ Beamer theme obtained as a customization of the [[https://github.com/matze/mthem
 
 ** Example talks
 
-   Most of my slides available [[https://users.flatironinstitute.org/~mrenzo/talks.html][here]] where made with (an earlier
-   version of) this setup.
+Most of my slides available [[https://lavinia.as.arizona.edu/~mrenzo/talks.html][here]] were made with this setup.
