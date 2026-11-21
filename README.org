@@ -1,8 +1,16 @@
-* My Beamer template
+* Beamer template
 
 Beamer theme obtained as a customization of the [[https://github.com/matze/mtheme][metropolis theme]].
 
 ** Tips
+
+*** Object placements
+
+    Use =textpos= to place objects with:
+    #+BEGIN_SRC latex
+      \begin{textblock}{width}[x_coord, y_coord](x_pos, y_pos)
+      \end{textblock}
+    #+END_SRC
 
 *** Figures
 
@@ -27,9 +35,9 @@ Beamer theme obtained as a customization of the [[https://github.com/matze/mthem
     \movie[width=0.9\textwidth,height=0.95\textheight,showcontrols=true,autostart=true]{}{./path/to/movie.mp4}
      #+end_src.
 
-    This works at least with  okular and pdfpc as pdf readers.
+    This works at least with =okular= and =pdfpc= as readers.
 
-    Note that =\movie= will not use the =graphicspath= set in the document
+    Note that =\movie= will /not/ use the =graphicspath= set in the document
     pre-amble.
 
 ** Example talks

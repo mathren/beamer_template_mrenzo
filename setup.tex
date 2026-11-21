@@ -29,8 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{appendixnumberbeamer}
 \usepackage{fancybox}
-\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}% for textpos
-\usepackage{mathabx} % for astronomical symbols of planets
+% \usepackage{mathabx} % for astronomical symbols of planets
 
 % some colors
 \definecolor{bblue}{HTML}{144b7a}%unipi logo color
@@ -404,7 +403,7 @@
 \makeatletter
 \setbeamertemplate{subsection page}{
   \centering
-  \begin{minipage}{22em}
+  \begin{minipage}{30em}
     \raggedright
     \usebeamercolor[fg]{section title}
     \usebeamerfont{section title}
@@ -422,3 +421,42 @@
 }
 \makeatother
 \AtBeginSection[]{}
+
+%  % Official University of Arizona brand colours
+\tcbuselibrary{skins}
+%
+\definecolor{UAred} {HTML}{AB0520}   % Arizona Red
+\definecolor{UAblue}{HTML}{0C234B}   % Arizona Blue
+%
+%  % Reusable UA-bordered block style
+\tcbset{
+  UAblock/.style={
+    enhanced,
+    halign title  = center,
+    fonttitle     = \small\bfseries,
+    colback       = structure!8!white,
+    colbacktitle  = structure,        % inherits your Beamer theme colour
+    coltitle      = white,
+    % ── Double border ──────────────────────────────────────────
+    colframe      = UAblue,           % outer ring  – Arizona Blue
+    boxrule       = 2pt,
+    arc           = 0pt,
+    outer arc     = 0pt,
+    borderline    = {1.5pt}{4.5pt}{UAred},  % inner ring – Arizona Red
+    % ── Padding (keeps content clear of the inner red line) ────
+    left          = 6pt,
+    right         = 6pt,
+    top           = 4pt,
+    bottom        = 4pt,
+    toptitle      = 1.5pt,
+    bottomtitle   = 1.5pt,
+  }
+}
+
+% \member[width]{image}{First}{Last}
+\newcommand{\member}[4][40pt]{%
+  \begin{tabular}[t]{@{}c@{}}
+    \includegraphics[width=#1]{#2}\\
+    #3\\
+    #4
+  \end{tabular}}
